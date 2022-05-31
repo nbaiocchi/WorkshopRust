@@ -5,14 +5,9 @@ use rand::Rng;
 use std::time::Instant;
 use crate::utils::*;
 
-// TODO : with help
-/// Options for the `addition` command
-/// 
-/// `-t` to select the number of turn 
-/// for the game
-/// 
+/// Options for the `outdated` command
 #[derive(Parser, Debug)]
-pub struct AdditionOptions {
+pub struct MultiplicationOptions {
     #[clap(short = 't', long)]
     /// number of turn, 10 by default
     pub turn: Option<String>,
@@ -22,11 +17,9 @@ const EMPTY: TriState = TriState::Empty;
 const EXIT: TriState = TriState::Exit;
 const FINE: TriState = TriState::Fine;
 
-/// Main function for addition loop
-/// 
-/// One cycle of the loop simulate one turn in the game
+/// Print a tab that contain the source, actual version, latest version and path location
 ///
-pub fn addition(param: AdditionOptions) {
+pub fn multiplication(param: MultiplicationOptions) {
     let mut turn = 10;
     if let Some(x) = param.turn {
         if x.bytes().all(|c| c.is_ascii_digit()) {
@@ -51,13 +44,12 @@ pub fn addition(param: AdditionOptions) {
 
         println!("\x1b[96mturn {}\x1b[0m", n);
 
-        println!("{} + {}", a, b);
-        let res = a + b;
+        println!("{} x {}", a, b);
+        let res = a * b;
         let line: String = read!("{}\n");
-        // TODO : with help
         match check_res(res, &mut score, line) {
             EXIT => process::exit(1),
-            EMPTY => println!("Hmm you should enter your responce before press enter!\n"),
+            EMPTY => println!("Hmm you should enter your responce before press enter!\n\x1b[91mSadly you lose a turn ...\x1b[0m\n"),
             FINE => continue,
         }
     }
