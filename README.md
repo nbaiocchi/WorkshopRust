@@ -39,6 +39,7 @@ $ cargo run [CMD]
 & cargo clippy
 ```
 ## Workshop I: Hello World
+
 1) Utiliser Cargo pour initialiser votre projet
 *	```$ cargo new [NAME] ```
 
@@ -54,4 +55,12 @@ $ cargo run [CMD]
 *	```$ cargo clippy``` -> Verifier que votre programme est `Safe` celon les critéres de clippy
 
 
-## Workshop II: Build IT
+## Workshop II: Remplire
+
+1) Recuperer le programme existant
+*	git clone le projet
+
+2) Completer
+*	Maintenant vous devrais completer le programe donner afin de le rendre fonctionnel et optimisé
+*	Toute les informations sont donné en dessous des `TODO :`
+*	Veuillez completer par ce qui est demandé dans touts les emplacement ou la mention `/* A remplire */` est precisé

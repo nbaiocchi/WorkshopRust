@@ -13,9 +13,18 @@ use crate::utils::*;
 /// 
 #[derive(Parser, Debug)]
 pub struct AdditionOptions {
+    // TODO :
+    //
+    // Créer une variable publique `turn` corespondant a une String
+    //
+    // La variable `turn` doit etre optionel afin de pouvoir choisir
+    // le nombre de tours voulu ou prendre le nombre de tours par defaut (10)
+    // si pas precisé
+    //
+    // DOC: https://doc.rust-lang.org/std/option/
+    //
     #[clap(short = 't', long)]
-    /// number of turn, 10 by default
-    pub turn: Option<String>,
+    //* A remplire */,
 }
 
 const EMPTY: TriState = TriState::Empty;
@@ -56,9 +65,17 @@ pub fn addition(param: AdditionOptions) {
         let line: String = read!("{}\n");
         // TODO : with help
         match check_res(res, &mut score, line) {
-            EXIT => process::exit(1),
-            EMPTY => println!("Hmm you should enter your responce before press enter!\n"),
-            FINE => continue,
+            // TODO :
+            //
+            // Match sur la return value de la fonction `check_res` et effectuer
+            // les operations suivantes:
+            //
+            //  Si la ligne recuperé est vide, afficher un message\n
+            //  Si le joueur veux quitter ("exit") exit le programe proprement
+            //  Dans le reste des cas continuer la loop
+            //
+
+            //* A remplire */,
         }
     }
     println!("You scored {}/{} in {} seconds", score, turn, now.elapsed().as_secs());

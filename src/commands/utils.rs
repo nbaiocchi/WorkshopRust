@@ -12,34 +12,25 @@ const EMPTY: TriState = TriState::Empty;
 const EXIT: TriState = TriState::Exit;
 const FINE: TriState = TriState::Fine;
 
-/// check the result on `res`
-/// 
-/// RETURN: 
-/// - if the line is empty => `TriState::Empty`
-/// - if he typed "exit" => `TriState::Exit`
-/// - if all goes well& => `TriState::Fine`
-///
-/// 
-pub fn check_res(res: i32, score: &mut i32, line: String) -> TriState {
+// TODO :
+//
+// creer une fonction pour verifier la valeur entré par le joueur
+//
+// La fonction doit :
+//  - check si `line` est vide ->                               return EMPTY
+//  - check si le joueur veux quitter (si line = "exit") ->     return EXIT
+//  - verifier si la reponse du joueur est corect ->            return FINE
+//
+// Pensait a bien verifier les cas d'erreur ;)
+//
+// DOC: https://doc.rust-lang.org/book/
+//      https://www.google.com/
+//
+// prototype de la fonction : `pub fn check_res(res: i32, score: &mut i32, line: String) -> TriState`
+//
 
-    if line.is_empty() {
-        return EMPTY;
-    }
-    if !line.bytes().all(|c| c.is_ascii_digit()) {
-        if line == "exit" {
-            println!("\n\x1b[90mGood bye see you soon !\x1b[0m\n");
-            return EXIT;
-        } else {
-            println!("\n\x1b[93mOnly digit are allowed sorry :)\x1b[0m \nThe right answere was \x1b[31m{}\x1b[0m\n", res);
-        }
-    } else if line.parse::<i32>().unwrap() == res {
-        *score += 1;
-        println!("\n\x1b[92mNice your right !\x1b[0m\n");
-    } else {
-        println!("\n\x1b[91mOh no ! Wrong answere ...\x1b[0m \nThe right answere was \x1b[31m{}\x1b[0m\n", res);
-    }
-    sleep(Duration::new(0, 500000000));
-    FINE
+pub fn check_res(res: i32, score: &mut i32, line: String) -> TriState {
+    //* A remplire */,
 }
 
 #[cfg(test)]
@@ -57,5 +48,22 @@ mod tests {
         }
     }
 
-    //TODO : test with match and test with asser_eq for FINE tristate
+    // TODO :
+    //
+    // faire un test pour la return value EXIT de check_res comme l'exemple du dessus
+    //
+    // DOC: https://doc.rust-lang.org/book/ch11-01-writing-tests.html
+    //
+    
+    //* A remplire */,
+
+
+    // TODO :
+    //
+    // faire un test pour la return value FINE de check_res en utilisant asser_eq
+    //
+    // DOC: https://doc.rust-lang.org/book/ch11-01-writing-tests.html
+    // 
+    
+    //* A remplire */,
 }

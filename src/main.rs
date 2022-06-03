@@ -25,8 +25,17 @@ fn main() {
 
 
     match app.command {
-        // TODO : with help
-        Command::Multiplication(params) => command_multiplication::multiplication(params),
-        Command::Addition(params) => command_addition::addition(params),
+        // TODO :
+        //
+        // Faire en sorte de match l'enum `Command` avec la fonction corespondante
+        //
+        // SYNTAXE :
+        //
+        // MATCH => fichier::fonction(params),
+        //
+        // DOC: https://doc.rust-lang.org/rust-by-example/flow_control/match.html
+
+        //* A remplire */ => /* A remplire */,
+        //* A remplire */ => /* A remplire */,
     };
 }
