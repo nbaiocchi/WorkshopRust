@@ -64,3 +64,10 @@ $ cargo run [CMD]
 *	Maintenant vous devrais completer le programe donner afin de le rendre fonctionnel et optimisé
 *	Toute les informations sont donné en dessous des `TODO :`
 *	Veuillez completer par ce qui est demandé dans touts les emplacement ou la mention `/* A remplire */` est precisé
+
+3) Créer votre propre commande
+*	Maintenant que vous maitrisez un peu mieux rust vous devez créer votre propre commande en suivant les instruction donnée
+	1. doit servir a resoudre des calcul simple (addition, multiplication, soustraction?)
+	2. doit prendre 3 parametres non optionel 2 `int` (pour les valeurs) et un `char` (pour le symbole de calcul)
+	3. ne doit pas etre hardcoder en `c` -> utiliser ce que rust met a disposition
+	4. Doit etre `safe` et ne doit pas pouvoir crash (division par 0?) -> utilisez des tests pour montrer la sureté de votre code
